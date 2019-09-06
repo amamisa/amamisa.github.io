@@ -5,7 +5,7 @@ title: MTA NYC Subway Data Analytics
 
 In this post we're going to present the data analytics applied on the MTA subway data.
 
-![subway image]({{ site.url }}/images/mta-subway.JPG)
+![subway image]({{ site.url }}/images/mta-subway)
 
 To make a post, you must follow the naming convention shown for this file,
 with the data as the first part of the file name, seperated by dashes. Then
