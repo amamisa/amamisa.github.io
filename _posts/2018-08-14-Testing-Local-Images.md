@@ -7,10 +7,8 @@ In this post we're going to present the data analytics applied on the MTA subway
 
 ![subway image]({{ site.url }}/images/mta-subway.JPEG)
 
-To make a post, you must follow the naming convention shown for this file,
-with the data as the first part of the file name, seperated by dashes. Then
-the name of the post as you want it to be stored, with spaces as dashes.
-Finally, you must also keep the 
+As a first project deliverable of metis, we have been asked for working on the New York City MTA Turnstile data. 
+So, for the purpose of this project we have used Pandas, MatplotLib, seaborn and pickle to support the exploratory data analysis process and to come up with a visualization of our results.
 
 ```
 ---
