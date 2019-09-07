@@ -69,8 +69,7 @@ The previous map shows the top stations which are the closest from the tech comp
 
 ### Conclusion
 
-After the exploration part, we come up with clear points that 
-we recommend the WTWY’s(WomenTechWomenYes) to deploy their street teams on the following stations on the weekdays, which our analysis shows them the best choices to collect the most signatures. listed bellow:
+After the exploration part, we come up with clear results. Therefore, We recommend the WTWY’s(WomenTechWomenYes) to deploy their street teams on the following stations on the weekdays, which our analysis shows them to be the best choices to collect the most signatures.
 
 1. 34 ST-PEEN STA
 2. GRD CNTRL-42 ST
