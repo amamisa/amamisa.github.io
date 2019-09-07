@@ -44,12 +44,16 @@ In this project we used the turnstile data from 2019 for the month of May you ca
 
 ### Pre-processing and Data Cleaning
 
-To start working on the data we have used pandas to upload the data with parsing the DATE-TIME. Then we decided to create a unique identifier for each turnstile by combining UNIT and SCP.
-As we mentioned above we have to calculate total number of traffic In order to do so we subtracted each rows of the cumulative entries and exits. We will then add them together to create the total traffic column.
-After we apply all the cleaning part we saved our data in a pickle file to reduce amount of time and to 
-read_pickle
+To start working on the data we have used pandas to upload the data with parsing the DATE-TIME. Then we decided to create a unique identifier for each turnstile by combining UNIT and SCP. Part of the cleaning process as well to droped the unnecessary columns C/A, LINENAME, DIVISION, DESC and to extract the dates which out of our scope.
+As we mentioned above we have to calculate the total number of traffic. In order to do so we subtracted each rows of the cumulative entries and exits so we can add them together to create the total traffic column.
+One of the important steps in data cleaning, dealing with outliers by calculating thr IQR for the total traffic. 
+After we apply all the cleaning part we saved our data in a pickle file to reduce the amount of time in processing the data and to reach it at anytime when it's needed.
 
-### Data Exploration and Analysis
+### Data Exploration and Visualization
+After cleaning the data and creating the “total traffic” column we were able to start analyzing the data. The following figures support us to assist WTWY on where to deploy their street teams.
+
+![analysis image]({{ site.url }}/images/top-20.png)
+
 
 
 ### Conclusion
