@@ -45,25 +45,47 @@ In this project we used the turnstile data from 2019 for the month of May you ca
 ### Pre-processing and Data Cleaning
 
 To start working on the data we have used pandas to upload the data with parsing the DATE-TIME. Then we decided to create a unique identifier for each turnstile by combining UNIT and SCP. Part of the cleaning process as well to droped the unnecessary columns C/A, LINENAME, DIVISION, DESC and to extract the dates which out of our scope.
+
 As we mentioned above we have to calculate the total number of traffic. In order to do so we subtracted each rows of the cumulative entries and exits so we can add them together to create the total traffic column.
+
 One of the important steps in data cleaning, dealing with outliers by calculating thr IQR for the total traffic. 
 After we apply all the cleaning part we saved our data in a pickle file to reduce the amount of time in processing the data and to reach it at anytime when it's needed.
 
 ### Data Exploration and Visualization
+
 After cleaning the data and creating the “total traffic” column we were able to start analyzing the data. The following figures support us to assist WTWY on where to deploy their street teams.
 
-![analysis image]({{ site.url }}/images/top-20.png)
+![top20 image]({{ site.url }}/images/top-20.png)
 
+From the previous bar chart, we can see the top 20 stations with the highest traffic for the month of May in 2019. 
 
+![weekdays image]({{ site.url }}/images/days-per-month.png)
+
+In the above graph we select 34 ST-PENN STA to find out the traffic per weekdays on the month of MAy 2019.
+
+![map image]({{ site.url }}/images/map.png)
+
+The previous map shows the top stations which are the closest from the tech companies.
 
 ### Conclusion
-we come up with clear points after explorations that 
-our recomendations to the team is to 
+
+After the exploration part, we come up with clear points that 
+we recommend the WTWY’s(WomenTechWomenYes) to deploy their street teams on the following stations on the weekdays, which our analysis shows them the best choices to collect the most signatures. listed bellow:
+
+1. 34 ST-PEEN STA
+2. GRD CNTRL-42 ST
+3. 23 ST
+4. TIMES SQ-42 ST
 
 ### Future Improvements
-to expand data exploration over the whole year to get a more useful insights.
-to use other data sets to improve qulity of the descion making
-to focus on the exits over the entries
+
+To improve the decision making process, we think its important to work on the bellow steps: 
+
+* Expanding our data scope exploration targeting the month of May over the past 3 years to get a more useful insights.
+* Gather demographics data to identify areas with most tech related residents.
+* Determine the exact hours of the day where station are crowded the most.
+* Concentrates on the exits over the entries. If we assume that people would be more willing to contribute to the gala when they are about to exit the station. On the contrary when people enter the station they tend to hurry up in catching up the metro going to thier work.
+
 
 ```
 ---
