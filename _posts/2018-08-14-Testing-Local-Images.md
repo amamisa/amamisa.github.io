@@ -61,7 +61,7 @@ From the previous bar chart, we can see the top 20 stations with the highest tra
 
 ![weekdays image]({{ site.url }}/images/days-per-month.png)
 
-In the above graph we select 34 ST-PENN STA to find out the traffic per weekdays on the month of MAy 2019.
+In the above graph we select 34 ST-PENN STA to find out the traffic per weekdays on the month of May 2019.
 
 ![map image]({{ site.url }}/images/map.png)
 
@@ -86,20 +86,3 @@ To improve the decision making process, we think its important to work on the be
 * Determine the exact hours of the day where station are crowded the most.
 * Concentrates on the exits over the entries. If we assume that people would be more willing to contribute to the gala when they are about to exit the station. On the contrary when people enter the station they tend to hurry up in catching up the metro going to thier work.
 
-
-```
----
-layout: post
-title: Zach's Test Post
----
-```
-
-[This is a link](http://thisismetis.com)
-
-![Image test]({{ site.url }}/images/AlanLeeShireGandalf.JPG)
-
-### Other things
-* Like
-* lists
-* and 
-* stuff
