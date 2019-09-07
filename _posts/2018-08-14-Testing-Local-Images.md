@@ -24,20 +24,30 @@ In order to find the appropriate dates for each station to deploy the street tea
 ### Data Acquisition
 In this project we used the turnstile data from 2019 for the month of May you can find the data sets from [here](http://web.mta.info/developers/turnstile.html). in the following there are more explainations for all the columns of the data set.
 
-C/A – The Control Area is the operator booth in a station.
-UNIT – The Remote Unit, which is the collection of turnstiles. A station may have more than one Remote Unit.
-SCP – The Subunit Channel Position represents the turnstile and the number used may repeat across stations.
-> The UNIT and SCP together is a unique identifier of a turnstile.
+**C/A** – The Control Area is the operator booth in a station.
 
-DATE – The date of the recording formatted in (MM/DD/YYYY).
+**UNIT** – The Remote Unit, which is the collection of turnstiles. A station may have more than one Remote Unit.
 
-TIME – The time for a recording, formatted in: (HH:MM:SS).
+**SCP** – The Subunit Channel Position represents the turnstile and the number used may repeat across stations.
 
-DESC – The DESC is the type of event of the reading. The turnstiles submit “Regular” readings every four hours.
+> The **UNIT** and **SCP** together is a unique identifier of a turnstile.
 
-ENTRIES = Are a cumulative count of turnstile entrances. Note, it continues to increase until it reaches the device limit and then resets to zero.
+**DATE** – The date of the recording formatted in (MM/DD/YYYY).
 
-EXITS = The EXITS are a cumulative count of the turnstile exits.
+**TIME** – The time for a recording, formatted in: (HH:MM:SS).
+
+**DESC** – The type of event of the reading. The turnstiles submit “Regular” readings every four hours.
+
+**ENTRIES** - Are a cumulative count of turnstile entrances. Note, it continues to increase until it reaches the device limit and then resets to zero.
+
+**EXITS** - The EXITS are a cumulative count of the turnstile exits.
+
+### Pre-processing and Data Cleaning
+
+To start working on the data we have used pandas to upload the data with parsing the DATE-TIME. Then we decided to create a unique identifier for each turnstile by combining UNIT and SCP.
+As we mentioned above we have to calculate total number of traffic In order to do so we subtracted each rows of the cumulative entries and exits. We will then add them together to create the total traffic column.
+After we apply all the cleaning part we saved our data in a pickle file to reduce amount of time and to 
+read_pickle
 
 ### Data Exploration and Analysis
 
