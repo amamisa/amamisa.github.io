@@ -12,7 +12,7 @@ So, for the purpose of this project we have used Pandas, MatplotLib, seaborn and
 
 ### Business Understanding:
 
-WomenTechWomenYes (WTWY) has a street teams that start working on every summer targeting the most contributions to thier annual OMGYN Gala. In order to optimize thier team, they are trying to deploy thier street teams in different NYC subway stations. The street teams will collect email addresses and those who sign up are sent free tickets to the gala.
+WomenTechWomenYes (WTWY) has a street teams that start working on every summer targeting the most contributions to their annual OMGYN Gala. In order to optimize their team, they are trying to deploy their street teams in different NYC subway stations. The street teams will collect email addresses and those who sign up are sent free tickets to the gala.
 Our job is to analyze the MTA data set and give recommendations on which subway stations to deploy their street teams for maximum signatures.
 
 ### Used Approach
