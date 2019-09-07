@@ -14,10 +14,30 @@ So, for the purpose of this project we have used Pandas, MatplotLib, seaborn and
 WomenTechWomenYes (WTWY) has a street teams that start working on every summer targeting the most contributions to thier annual OMGYN Gala. In order to optimize thier team, they are trying to deploy thier street teams in different NYC subway stations. The street teams will collect email addresses and those who sign up are sent free tickets to the gala.
 Our job is to analyze the MTA data set and give recommendations on which subway stations to deploy their street teams for maximum signatures.
 
-### Data Acquisition
-Cleaning the data requires dealing with missing values and outliers 
+### Used Approach
+In order to find the appropriate dates for each station to deploy the street team we have to atchive the listed points below:
 
-you can find the data from [here](http://thisismetis.com)
+* First we have to point the stations with the highest traffic records
+* Locate the highest traffic subway stations which are closer to the tech companies.
+* Find out the most weekdays traffic at the month of May to concentrate their efforts on them.
+
+### Data Acquisition
+In this project we used the turnstile data from 2019 for the month of May you can find the data sets from [here](http://web.mta.info/developers/turnstile.html). in the following there are more explainations for all the columns of the data set.
+
+C/A – The Control Area is the operator booth in a station.
+UNIT – The Remote Unit, which is the collection of turnstiles. A station may have more than one Remote Unit.
+SCP – The Subunit Channel Position represents the turnstile and the number used may repeat across stations.
+> The UNIT and SCP together is a unique identifier of a turnstile.
+
+DATE – The date of the recording formatted in (MM/DD/YYYY).
+
+TIME – The time for a recording, formatted in: (HH:MM:SS).
+
+DESC – The DESC is the type of event of the reading. The turnstiles submit “Regular” readings every four hours.
+
+ENTRIES = Are a cumulative count of turnstile entrances. Note, it continues to increase until it reaches the device limit and then resets to zero.
+
+EXITS = The EXITS are a cumulative count of the turnstile exits.
 
 ### Data Exploration and Analysis
 
@@ -29,6 +49,7 @@ our recomendations to the team is to
 ### Future Improvements
 to expand data exploration over the whole year to get a more useful insights.
 to use other data sets to improve qulity of the descion making
+to focus on the exits over the entries
 
 ```
 ---
