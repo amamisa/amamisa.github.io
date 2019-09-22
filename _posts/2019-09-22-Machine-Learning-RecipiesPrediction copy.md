@@ -6,26 +6,30 @@ title: ML Recipes Success Prediction
 The main idea of this post, to highlight web scraping and machine learning using linear regression.
 
 
-![subway image]({{ site.url }}/images/recipes.png)
+![recipes image]({{ site.url }}/images/recipes.png)
 
- For the purpose of the second project for metis, I'll be taking the data set by using web scraping tool called BeautifulSoup, in order to apply the concepts that we have learned.
- I have choose Allrecipes website which contain information about different food recipes.
- In general, the website has two types of templates, which made scraping more complicated. However, 
+For the purpose of the second project for metis, I'll be taking the data set by using web scraping tool called BeautifulSoup, in order to apply the concepts that we have learned.
+
+I have choose Allrecipes website which contain information about different food recipes.
 
 
 ### Challenge:
-It's all starts when a chef wanted to know if his recipes are gaining a massive popularity and success among people. For that amateur chef I have used Allrecipes website data to predict recipes success, so he could start his new restaurant.
+It's all starts when a chef wanted to know if his recipes are gaining a massive popularity and success among people. For that amateur chef, I have used Allrecipes website data to predict recipes success, so he could start his new restaurant.
 
 
-### Used Approach
-In order to find the appropriate dates for each station to deploy the street team we have to atchive the listed points below:
+### Methodology
+In order to create a decent model for predictions, the following list contain the main steps that we should take:
 
-* First we have to point the stations with the highest traffic records
-* Locate the highest traffic subway stations which are closer to the tech companies.
-* Find out the most weekdays traffic at the month of May to concentrate their efforts on them.
+* Web scraping and data acquisition.
+* Data cleaning and preprocessing.
+* Feature engineering.
+* Modeling using linear regression.
+* Testing results.
 
 ### Data Acquisition
-In this project we used the turnstile data from 2019 for the month of May you can find the data sets from [here](http://web.mta.info/developers/turnstile.html). in the following there are more explainations for all the columns of the data set.
+In general, the website has two types of templates, which made scraping more complicated. You can find them in these links [template1](https://www.allrecipes.com/recipe/13477/double-layer-pumpkin-cheesecake/) and [template2](https://www.allrecipes.com/recipe/8817/slow-cooker-chicken-cacciatore/). However, I cope with it by defining a scraping technique for each template separately. Finally, I got to collect more than 1000 observations and 9 features which will be explained more bellow:
+
+![website image]({{ site.url }}/images/features.png)
 
 **C/A** – The Control Area is the operator booth in a station.
 
