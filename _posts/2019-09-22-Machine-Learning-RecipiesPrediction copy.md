@@ -3,17 +3,19 @@ layout: post
 title: ML Recipes Success Prediction
 ---
 
-In this post we're going to present the data analytics applied on the MTA subway data.
+The main idea of this post, to highlight web scraping and machine learning using linear regression.
+
 
 ![subway image]({{ site.url }}/images/recipes.png)
 
-As a first project deliverable of metis, we have been asked for working on the New York City MTA Turnstile data. 
-So, for the purpose of this project we have used Pandas, MatplotLib, seaborn and pickle to support the exploratory data analysis process and to come up with a visualization of our results.
+ For the purpose of the second project for metis, I'll be taking the data set by using web scraping tool called BeautifulSoup, in order to apply the concepts that we have learned.
+ I have choose Allrecipes website which contain information about different food recipes.
+ In general, the website has two types of templates, which made scraping more complicated. However, 
 
-### Business Understanding:
 
-WomenTechWomenYes (WTWY) has a street teams that start working on every summer targeting the most contributions to their annual OMGYN Gala. In order to optimize their team, they are trying to deploy their street teams in different NYC subway stations. The street teams will collect email addresses and those who sign up are sent free tickets to the gala.
-Our job is to analyze the MTA data set and give recommendations on which subway stations to deploy their street teams for maximum signatures.
+### Challenge:
+It's all starts when a chef wanted to know if his recipes are gaining a massive popularity and success among people. For that amateur chef I have used Allrecipes website data to predict recipes success, so he could start his new restaurant.
+
 
 ### Used Approach
 In order to find the appropriate dates for each station to deploy the street team we have to atchive the listed points below:

@@ -16,14 +16,14 @@ WomenTechWomenYes (WTWY) has a street teams that start working on every summer t
 Our job is to analyze the MTA data set and give recommendations on which subway stations to deploy their street teams for maximum signatures.
 
 ### Used Approach
-In order to find the appropriate dates for each station to deploy the street team we have to atchive the listed points below:
+In order to find the appropriate dates for each station to deploy the street team we have to achieve the listed points below:
 
 * First we have to point the stations with the highest traffic records
 * Locate the highest traffic subway stations which are closer to the tech companies.
 * Find out the most weekdays traffic at the month of May to concentrate their efforts on them.
 
 ### Data Acquisition
-In this project we used the turnstile data from 2019 for the month of May you can find the data sets from [here](http://web.mta.info/developers/turnstile.html). in the following there are more explainations for all the columns of the data set.
+In this project we used the turnstile data from 2019 for the month of May you can find the data sets from [here](http://web.mta.info/developers/turnstile.html). in the following there are more explanations for all the columns of the data set.
 
 **C/A** – The Control Area is the operator booth in a station.
 
@@ -45,7 +45,7 @@ In this project we used the turnstile data from 2019 for the month of May you ca
 
 ### Pre-processing and Data Cleaning
 
-To start working on the data we have used pandas to upload the data with parsing the DATE-TIME. Then we decided to create a unique identifier for each turnstile by combining UNIT and SCP. Part of the cleaning process as well to droped the unnecessary columns C/A, LINENAME, DIVISION, DESC and to extract the dates which out of our scope.
+To start working on the data we have used pandas to upload the data with parsing the DATE-TIME. Then we decided to create a unique identifier for each turnstile by combining UNIT and SCP. Part of the cleaning process as well to dropped the unnecessary columns C/A, LINENAME, DIVISION, DESC and to extract the dates which out of our scope.
 
 As we mentioned above we have to calculate the total number of traffic. In order to do so we subtracted each rows of the cumulative entries and exits so we can add them together to create the total traffic column.
 
@@ -84,5 +84,5 @@ To improve the decision making process, we think its important to work on the be
 * Expanding our data scope exploration targeting the month of May over the past 3 years to get a more useful insights.
 * Gather demographics data to identify areas with most tech related residents.
 * Determine the exact hours of the day where station are crowded the most.
-* Concentrates on the exits over the entries. If we assume that people would be more willing to contribute to the gala when they are about to exit the station. On the contrary when people enter the station they tend to hurry up in catching up the metro going to thier work.
+* Concentrates on the exits over the entries. If we assume that people would be more willing to contribute to the gala when they are about to exit the station. On the contrary when people enter the station they tend to hurry up in catching up the metro going to their work.
 
