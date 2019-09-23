@@ -11,10 +11,10 @@ The main idea of this post, to highlight web scraping and machine learning using
 For the purpose of the second project for metis, I'll be taking the data set by using web scraping tool called BeautifulSoup, in order to apply the concepts that we have learned.
 
 I have choose Allrecipes website which contain information about different food recipes.
-
+This project uses libraries like Pandas, numpy, MatplotLib, seaborn, BeautifulSoup, statsmodels, sklearn and pickle.
 
 ### Challenge:
-It's all starts when a chef wanted to know if his recipes are gaining a massive popularity and success among people. For that amateur chef, I have used Allrecipes website data to predict recipes success, so he could start his new restaurant.
+It all starts when a chef wanted to know if his recipes are gaining a massive popularity and success among people. For that amateur chef, I have used Allrecipes website data to predict recipes success, so he could start his new restaurant.
 
 
 ### Methodology
@@ -77,22 +77,31 @@ In order to start our model we have to be sure that our target is a Gaussian lik
 
 ![target image]({{ site.url }}/images/target.png)
 
-
+After that, I use heatmap plot to visualize correlations between features, also for discovering multicollinearity.
 
 ![heatmap image]({{ site.url }}/images/heatmap.png)
 
-![residual image]({{ site.url }}/images/residual.png)
+from the previous figure, there is a strong correlation between no_photos and reviews towards the target. In the other hand there is a weak correlation between cals, time and servings towards the target.
+
+#### Baseline Model
+ As the first step before creating our model, we need to split the data into training and testing sets by 80 and 20 respectively. By identifying X and Y values then using ```train_test_split``` with ```test_size=.2, random_state=42```
+
+Then I create the linear Regression model using sklearn, after that I feed it with my training X and Y data.
+Finally I calculate R^2 of 0.80 which was good.
+
+Then I decided to apply cross validation technique using ``` KFold(n_splits=5, shuffle=True, random_state = 71) ``` and I end up with improved model performance by R^2 of 0.91 which is better than before.
+So I test the model by using the test data set and I got R^2 of 0.93 and coefficients as follows:
 
 ![coefficients image]({{ site.url }}/images/coefficients.png)
+
+The next figure illustrating the residual for the final model results. We can see it is randomized around the zero mean. which is a sign of a good model.
+
+![residual image]({{ site.url }}/images/residual.png)
+
 
 
 ### Conclusion
 
-After the exploration part, we come up with clear results. Therefore, We recommend the WTWY’s(WomenTechWomenYes) to deploy their street teams on the following stations on the weekdays, which our analysis shows them to be the best choices to collect the most signatures.
-
-1. 34 ST-PEEN STA
-2. GRD CNTRL-42 ST
-3. 23 ST
-4. TIMES SQ-42 ST
+To conclude, I recommend our chef to increase the number of recipes pictures as much as possible and encouraging him to focus on desserts, since its more popular. Moreover my model shows a good results of predicting the recipes success to help him to starts his new business.
 
 
