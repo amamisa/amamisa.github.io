@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ML Recipes Success Prediction
+title: ML Predicting the success of recipes
 ---
 
 The main idea of this post, to highlight web scraping and machine learning using linear regression.
@@ -29,50 +29,62 @@ In order to create a decent model for predictions, the following list contain th
 ### Data Acquisition
 In general, the website has two types of templates, which made scraping more complicated. You can find them in these links [template1](https://www.allrecipes.com/recipe/13477/double-layer-pumpkin-cheesecake/) and [template2](https://www.allrecipes.com/recipe/8817/slow-cooker-chicken-cacciatore/). However, I cope with it by defining a scraping technique for each template separately. Finally, I got to collect more than 1000 observations and 9 features which will be explained more bellow:
 
-![website image]({{ site.url }}/images/features.png)
+![features image]({{ site.url }}/images/features.png)
+![dataframe image]({{ site.url }}/images/dataframe.png)
 
-**C/A** – The Control Area is the operator booth in a station.
+**ratings** – The recipe's rating.
 
-**UNIT** – The Remote Unit, which is the collection of turnstiles. A station may have more than one Remote Unit.
+**title** – The recipe's title.
 
-**SCP** – The Subunit Channel Position represents the turnstile and the number used may repeat across stations.
+**made_it** – How many people have made this recipe.
 
-> The **UNIT** and **SCP** together is a unique identifier of a turnstile.
+> The **made_it** is our target.
 
-**DATE** – The date of the recording formatted in (MM/DD/YYYY).
+**reviews** – The number of reviews for each recipe.
 
-**TIME** – The time for a recording, formatted in: (HH:MM:SS).
+**no_photos** – The number of photos for each recipe.
 
-**DESC** – The type of event of the reading. The turnstiles submit “Regular” readings every four hours.
+**cals** – The amount of calories in each recipe.
 
-**ENTRIES** - Are a cumulative count of turnstile entrances. Note, it continues to increase until it reaches the device limit and then resets to zero.
+**times** - The amount of time each recipe needs to be prepared in minutes.
 
-**EXITS** - The EXITS are a cumulative count of the turnstile exits.
+**cats** - The recipe's category.
+
+**servings** - The number of servings for each recipe.
+
 
 ### Pre-processing and Data Cleaning
 
-To start working on the data we have used pandas to upload the data with parsing the DATE-TIME. Then we decided to create a unique identifier for each turnstile by combining UNIT and SCP. Part of the cleaning process as well to droped the unnecessary columns C/A, LINENAME, DIVISION, DESC and to extract the dates which out of our scope.
+Basically, I have spent a lot of time on this part because the scraping outcome was unclean and messy. Therefore, I had to deal with extra noisy information and change the others to numerical values. 
 
-As we mentioned above we have to calculate the total number of traffic. In order to do so we subtracted each rows of the cumulative entries and exits so we can add them together to create the total traffic column.
+Furthermore, I had to handle missing values that appeared in two columns (time and calories). Then I have checked for negative values after that I dropped two columns (title and cats). Finally I plot the pair plot for my features to visualize it and scan it by intuition. However, I figure out I had to apply power transformation for the whole features including the target in order to have them look like Gaussian Distribution.
 
-One of the important steps in data cleaning, dealing with outliers by calculating thr IQR for the total traffic. 
-After we apply all the cleaning part we saved our data in a pickle file to reduce the amount of time in processing the data and to reach it at anytime when it's needed.
+![pairplot image]({{ site.url }}/images/pairplot.png)
+ 
+After we apply all the cleaning part I have saved the data frame in a pickle file to reduce the amount of time in processing the data and to reach it at anytime when it's needed.
 
 ### Data Exploration and Visualization
 
-After cleaning the data and creating the “total traffic” column we were able to start analyzing the data. The following figures support us to assist WTWY on where to deploy their street teams.
+After finishing the cleaning part, I start analyzing the data by creating a scatter plot for no_photos - which is one of the features that has a linear relationship towards the target also we can see it colored by each category in the following figure.
 
-![top20 image]({{ site.url }}/images/top-20.png)
+![eda image]({{ site.url }}/images/eda.png)
 
-From the previous bar chart, we can see the top 20 stations with the highest traffic for the month of May in 2019. 
+From the previous figure, we can see the drinks -in pink- has the least popularity with the least number of photos. Whereas, desserts -in dark blue- has the most popularity among people with the highest number of pictures.  
 
-![weekdays image]({{ site.url }}/images/days-per-month.png)
+### Modeling and Testing
 
-In the above graph we select 34 ST-PENN STA to find out the traffic per weekdays on the month of May 2019.
+In order to start our model we have to be sure that our target is a Gaussian like so it succeed to fit linear model. For that purpose I have plot my target -made_it- using histogram.
 
-![map image]({{ site.url }}/images/map.png)
+![target image]({{ site.url }}/images/target.png)
 
-The previous map shows the top stations which are the closest from the tech companies.
+
+
+![heatmap image]({{ site.url }}/images/heatmap.png)
+
+![residual image]({{ site.url }}/images/residual.png)
+
+![coefficients image]({{ site.url }}/images/coefficients.png)
+
 
 ### Conclusion
 
@@ -83,12 +95,4 @@ After the exploration part, we come up with clear results. Therefore, We recomme
 3. 23 ST
 4. TIMES SQ-42 ST
 
-### Future Improvements
-
-To improve the decision making process, we think its important to work on the bellow steps: 
-
-* Expanding our data scope exploration targeting the month of May over the past 3 years to get a more useful insights.
-* Gather demographics data to identify areas with most tech related residents.
-* Determine the exact hours of the day where station are crowded the most.
-* Concentrates on the exits over the entries. If we assume that people would be more willing to contribute to the gala when they are about to exit the station. On the contrary when people enter the station they tend to hurry up in catching up the metro going to thier work.
 
