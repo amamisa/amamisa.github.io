@@ -4,7 +4,7 @@ title: Bank Customer Loyalty
 ---
 
 
-![bank image]({{ site.url }}/images/mta-bank.jpeg)
+![bank image]({{ site.url }}/images/bank.jpeg)
 
 
 ![chart image]({{ site.url }}/images/chart.png)
