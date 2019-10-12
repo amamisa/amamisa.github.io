@@ -8,6 +8,7 @@ title: Bank Customer Loyalty
 
 
 ![chart image]({{ site.url }}/images/chart.png =100x)
+<img src="chart.png" alt="drawing" width="200"/>
 
 From the above chart we can see there is about 20% of the bank customers leaving the bank and about 80% of them still customers of the bank. However, as part of the bank's marketing plan, these customers should be dealt with them in a proper way to minimize bank exits. The objective of this project is to develop a churn model that predicts customers exits.
 
