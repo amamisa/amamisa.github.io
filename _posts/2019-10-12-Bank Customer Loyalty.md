@@ -9,12 +9,12 @@ title: Bank Customer Loyalty
 
 ![chart image]({{ site.url }}/images/chart.png)
 
-From the above chart we can see there is about 20% of the bank customers leaving the bank and about 80% of them still customers of the bank. However, as part of the bank's marketing plan, these customers should be dealt with them in a proper way to minimize bank exits. The objective of this project is to develop a churn model that predicts customers exits.
+From the above chart we can see there is about 20% of the bank customers leaving the bank and about 80% of them still customers of the bank. So, as part of the bank's marketing plan, these customers should be treated in a proper way to minimize bank exits. The objective of this project is to develop a churn model that predicts customers exits.
 
 
 ### About the Data
 
-I got This data set from Kaggle you can find it from [here](https://www.kaggle.com/shrutimechlearn/churn-modelling). It contains details of a bank's customers and the target variable is a binary variable reflecting the fact whether the customer left the bank (closed his account) or he continues to be a customer.
+I got this data set from Kaggle you can find it from [here](https://www.kaggle.com/shrutimechlearn/churn-modelling). It contains details of a bank's customers and the target variable is a binary variable reflecting the fact whether the customer left the bank (closed his account) or he continues to be a customer.
 
 
 **RowNumberRow** Numbers from 1 to 10000.
